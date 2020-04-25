@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Sat, 25 Apr 2020 08:38:41 +0000</lastBuildDate>
+        <lastBuildDate>Sat, 25 Apr 2020 18:04:28 +0000</lastBuildDate>
         
             <atom:link rel="self" type="application/rss+xml" href="https://example.com/rss.xml" />
         
@@ -155,6 +155,18 @@ git remote add origin [url]
 
 </code></pre><p>你需要把邮件地址换成你自己的邮件地址，然后一路回车，使用默认值即可，因为这个个Key仅仅用于简单的服务，所以也无需设置密码。
 <code>.ssh</code>目录生产两个文件:<code>id_rsa私匙</code>和<code>id_rsa.pub公匙</code>我们需要的是把公匙内容复制到Github设置里密匙设置就行</p>
+<h2 id="团队协作的场景">团队协作的场景</h2>
+<p>（1）不同人同时修改不同区域</p>
+<p>Copy</p>
+<pre><code># 1.先把远端的仓库fetch下来git fetch git_name# 2.再将本地和远端仓库合并git merge remote_branch_name# 3.合并后push到远端仓库git push git_name branch_name--------------------------------------------# 其中 1&amp;2 可以用pull命令代替# 将远端的仓库pull下来（fetch+merge）git pull git_name
+</code></pre><p>（2）不同人同时修改同一区域</p>
+<p>手动修改该文件，并删掉merge的提示信息</p>
+<p>（3）更改文件名对他人影响</p>
+<p>1号队员更改文件名并push，2号队员修改内容发现push被reject。</p>
+<p>2号队员直接pull即可。</p>
+<p>（4）不使用 <code>git push -f</code></p>
+<p>（5）不对公共 <code>commit</code> 做变基</p>
+<p>只能对 <code>本地commit</code> 做变基，一旦 <code>push</code> 到远端仓库，就不可以 <code>pull</code> 下来，做变基</p>
 ]]></description>
                 
                 
