@@ -23,86 +23,24 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Fri, 01 May 2020 00:40:05 +0000</lastBuildDate>
+        <lastBuildDate>Sun, 03 May 2020 09:08:15 +0000</lastBuildDate>
         
             <atom:link rel="self" type="application/rss+xml" href="https://example.com/rss.xml" />
         
         
             <item>
-                <title>Github搭建Hugo与Actions联动</title>
-                <link>https://example.com/tech/github-hugo-actions/</link>
-                <guid isPermaLink="true">https://example.com/tech/github-hugo-actions/</guid>
-                <pubDate>Sat, 25 Apr 2020 15:37:49 +0800</pubDate>
+                <title>弘扬五四精神 肩负光荣使命</title>
+                <link>https://example.com/life/wu-si-jing-shen-ganwu/</link>
+                <guid isPermaLink="true">https://example.com/life/wu-si-jing-shen-ganwu/</guid>
+                <pubDate>Tue, 28 Apr 2020 13:18:05 +0800</pubDate>
                 
                     <author>vome#qq.com (白歌)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
-                    <description><![CDATA[<p>本网站就是这样搭建的，把源代码放到一个仓库然后通过Actions<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
-<p>功能把源代码进行编译构成静态文件推送到06K.Github.io这个仓库,希望对在看的同学有一定的帮助。</p>
-<h3 id="前期准备">前期准备</h3>
-<p>首先您得去<code>Github</code>这个网站去注册账号并创建存放源代码的仓库与一个以您用户名开头的然后后缀是以<code>.Github.io</code>结尾的的仓库比如说我的用户名为06k那么我存放网站文件的仓库名称就是<code>06k.Github.io</code></p>
-<p>那么我们现在在Github网站上有两个仓库了<code>请注意我们的通俗约定是您已经通晓Git这个工具的使用方式</code></p>
-<ol>
-<li>源代码仓库名字随意</li>
-<li>存放网站文件的仓库以用户名开头 uesr.Github.io</li>
-</ol>
-<h3 id="生成密匙">生成密匙</h3>
-<p>我们Actions功能需要对仓库有操作的权限ssh密匙就是很好的方式，下面是生成的方式</p>
-<pre><code>ssh-keygen -t rsa -b 4096 -C &quot;$(git config user.email)&quot; -f gh-pages -N &quot;&quot;
-</code></pre><p>上面的命令会在执行命令的目录下生成<code>gh-pages私匙</code>与<code>gh-pages.pub公匙</code></p>
-<ol>
-<li>
-<p>假设 上传源代码的仓库为 <strong>HUGO</strong> 部署的项目网页文件的仓库为 <strong>user.github.io</strong></p>
-</li>
-<li>
-<p>打开<code>HUGO</code>仓库的<code>settings</code>，再点击<code>Secrets</code>，然后添加刚刚生成的私钥，name为<code>ACTIONS_DEPLOY_KEY</code>名字不能改</p>
-</li>
-<li>
-<p>同理，打开<code>user.github.io</code>，点击Deploy keys，添加公钥，<strong>Allow write access</strong>一定要勾上，<strong>否则会无法提交</strong></p>
-</li>
-</ol>
-<p>然后，</p>
-<h3 id="配置github-action">配置Github Action</h3>
-<p>首先在源代码项目仓库点击action，选择<strong>Simple workflow</strong>，输入一下的配置代码：</p>
-<pre><code>name: CI #自动化的名称
-on:
-  push: # push的时候触发
-    branches: # 那些分支需要触发
-      - master
-jobs:
-  build:
-    runs-on: ubuntu-18.04 # 镜像市场
-    steps:
-      - name: checkout # 步骤的名称
-        uses: actions/checkout@v1 #软件市场的名称
-        with: # 参数
-          submodules: true
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2.2.2
-        with:
-          hugo-version: latest
-          extended: true
-      - name: Build
-        run: hugo -D                  
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v2.5.1
-        env:
-          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          EXTERNAL_REPOSITORY: 06k/06k.Github.io # 自定义仓库名称
-          PUBLISH_BRANCH: master
-          PUBLISH_DIR: ./public
-
-</code></pre><p>后面#号的注释不用删除</p>
-<p>后面就是大功告成，好好体验吧</p>
-<section class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn:1" role="doc-endnote">
-<p>持续集成由很多操作组成，比如抓取代码、运行测试、登录远程服务器，发布到第三方服务等等。GitHub 把这些操作就称为 actions。 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</section>
+                    <description><![CDATA[<p>先辈所亲历战斗，斗而辛在者已老矣。</p>
+<p>要我们穿越时间去往哪一百年前，中华民族最开始屈辱历史的开端，去往那北洋政府屈服于强权，要本是战胜国的中国，割让本就属于自己的领土。也要本该在校园朗朗读书声学习的青年们纷纷走出校门，用充满铿锵有力的口号，自信的话语，去敲响那本就没有完全扫进历史尘埃里的对外帝国主义，出卖国家主权的死亡丧钟。仿佛听到那时候燕北学子在街头的郎朗的口号，峥嵘岁月，去重燃五四之魂，重铸国之脊梁。</p>
+<p>回顾百年之后，古老的东方巨龙从积弱到强大只用了区区百年，几代人的艰苦奋斗，换来的是东方巨人的崛起。这离不开中华民族自古以来的爱国情怀，这是青年人最深厚最深情的情感，从小学到中学到大学，一路走来，最要青年热血沸腾，为之庄严慎重的无疑是站在国旗下，听着庄严的国歌，缓缓看着国旗一步一步的升起。特在这年的疫情面前有多少青年人“向疫前行”。百年的风风雨雨培养出的青年人担得起时代赋予的责任。</p>
 ]]></description>
                 
                 
@@ -118,75 +56,19 @@ jobs:
             </item>
         
             <item>
-                <title>Git工具-常用命令</title>
-                <link>https://example.com/tech/git-changjian-mingning/</link>
-                <guid isPermaLink="true">https://example.com/tech/git-changjian-mingning/</guid>
-                <pubDate>Fri, 24 Apr 2020 11:59:10 +0800</pubDate>
+                <title>关于爱情</title>
+                <link>https://example.com/life/guan-ai-qing/</link>
+                <guid isPermaLink="true">https://example.com/life/guan-ai-qing/</guid>
+                <pubDate>Fri, 24 Apr 2020 11:51:19 +0800</pubDate>
                 
                     <author>vome#qq.com (白歌)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
-                    <description><![CDATA[<p>常用的Git命令做一个记录</p>
-<h2 id="设置全局用户与邮箱">设置全局用户与邮箱</h2>
-<pre><code>设置用户名：git config --global user.name &quot;name&quot;
-设置用户邮箱：git config --global user.email &quot;eamil&quot;
-查看配置的用户名：git config user.name
-查看配置的用户邮箱：git config user.email
-</code></pre><h2 id="初始化一个目录为仓库">初始化一个目录为仓库</h2>
-<pre><code>git init
+                    <description><![CDATA[<p>爱情中不只有甜甜蜜蜜的过程，也有意外的苦涩，每一件事你说的和做的无不一样，过程中想轰轰烈烈去过，每一天都是惊喜，普普通通的过程也行，每个人都是独立的个体，它呀就需要我们不必去怨天尤人，只需要我们共同去经营，去同心造就，这才是最好的尊重吧。</p>
+<pre><code>做人不可以太低下，因为父亲曾把你举过头顶。
 
-git init命令的作用是在当前目录中初始化仓库，并且创建一个名为.git的子目录，该目录含有你初始化的Git仓库中所有的必须文件。
-</code></pre><h2 id="关联远程仓库到本地仓库">关联远程仓库到本地仓库</h2>
-<pre><code>查看关联的远程仓库的名称：git remote
-查看关联的远程仓库的详细信息：git remote -v
-添加远程仓库的关联：git remote add origin &lt;远程仓库地址&gt;
-删除远程仓库的关联：git remote remove &lt;远程仓库名称&gt;
-修改远程仓库的关联：git remote set-url origin &lt;新的远程仓库地址&gt;
-更新远程仓库的分支：git remote update origin --prune
-
-先删后加
-git remote rm origin
-git remote add origin [url]
-
-</code></pre><p><code>注意关联的仓库地址不一样，在上传的时候认证的方式也不一样，http的地址是会弹出输入用户名与密码相反ssh密匙认证的关联地址git@github.com:reuixiy/io-oi.me.git是这样的一个地址</code></p>
-<h2 id="生成认证密匙">生成认证密匙</h2>
-<pre><code>ssh-keygen -t rsa -C &quot;eamil&quot;
-
-</code></pre><p>你需要把邮件地址换成你自己的邮件地址，然后一路回车，使用默认值即可，因为这个个Key仅仅用于简单的服务，所以也无需设置密码。
-<code>.ssh</code>目录生产两个文件:<code>id_rsa私匙</code>和<code>id_rsa.pub公匙</code>我们需要的是把公匙内容复制到Github设置里密匙设置就行</p>
-<h2 id="团队协作的场景">团队协作的场景</h2>
-<p>（1）不同人同时修改不同区域</p>
-<p>Copy</p>
-<pre><code># 1.先把远端的仓库fetch下来git fetch git_name# 2.再将本地和远端仓库合并git merge remote_branch_name# 3.合并后push到远端仓库git push git_name branch_name--------------------------------------------# 其中 1&amp;2 可以用pull命令代替# 将远端的仓库pull下来（fetch+merge）git pull git_name
-</code></pre><p>（2）不同人同时修改同一区域</p>
-<p>手动修改该文件，并删掉merge的提示信息</p>
-<p>（3）更改文件名对他人影响</p>
-<p>1号队员更改文件名并push，2号队员修改内容发现push被reject。</p>
-<p>2号队员直接pull即可。</p>
-<p>（4）不使用 <code>git push -f</code></p>
-<p>（5）不对公共 <code>commit</code> 做变基</p>
-<p>只能对 <code>本地commit</code> 做变基，一旦 <code>push</code> 到远端仓库，就不可以 <code>pull</code> 下来，做变基</p>
-<h1 id="在github多个帐号上添加ssh公钥">在GitHub多个帐号上添加SSH公钥</h1>
-<p>1、生成一个新的SSH KEY</p>
-<pre><code>larry@thk:~$ ssh-keygen -t rsa -C 'git@webmaster.me'
-Generating public/private rsa key pair.Enter file in which to save the key (~/.ssh/id_rsa): ~/.ssh/id_rsa2 #这里输入一个新的ssh 
-</code></pre><p>~/.ssh/id_rsa2为新SSH Keys文件名，根据实际情况修改，保证每次不一样即可。
-2、打开新生成的~/.ssh/id_rsa2.pub文件，将里面的内容添加到GitHub后台。
-3、打开~/.ssh/config文件（没有则创建），添加一个Host：</p>
-<pre><code>#建一个github别名，新建的帐号使用这个别名做克隆和更新
-Host github2
-HostName github.com
-User git
-IdentityFile ~/.ssh/id_rsa2.pub
-</code></pre><p>4、将GitHub SSH仓库地址中的<a href="http://lib.csdn.net/base/git">Git</a>@github.com替换成新建的Host别名。
-如原地址是：<a href="http://lib.csdn.net/base/git">git</a>@github.com:freehost/mail.git，替换后应该是：github2:freehost/mail.git
-如果是新建的仓库，直接使用替换后的URL克隆即可。如果已经使用原地址克隆过了，可以使用命令修改：</p>
-<pre><code>git remote set-url origin github2:freehost/mail.git
-</code></pre><ol start="5">
-<li>测试</li>
-</ol>
-<pre><code>ssh -T git@github2
+                           ——是颖鹅呐
 </code></pre>]]></description>
                 
                 
