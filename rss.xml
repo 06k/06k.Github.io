@@ -23,13 +23,13 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Mon, 04 May 2020 11:05:01 +0000</lastBuildDate>
+        <lastBuildDate>Mon, 04 May 2020 11:11:37 +0000</lastBuildDate>
         
             <atom:link rel="self" type="application/rss+xml" href="https://example.com/rss.xml" />
         
         
             <item>
-                <title>Linux Unmot Gua Zai Disk</title>
+                <title>Linux 下自动挂载硬盘</title>
                 <link>https://example.com/tech/linux-unmot-gua-zai-disk/</link>
                 <guid isPermaLink="true">https://example.com/tech/linux-unmot-gua-zai-disk/</guid>
                 <pubDate>Mon, 04 May 2020 18:55:39 +0800</pubDate>
@@ -38,7 +38,8 @@
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
-                    <description><![CDATA[<h3 id="查看分区信息">查看分区信息</h3>
+                    <description><![CDATA[<p>后面补充遇到的问题</p>
+<h3 id="查看分区信息">查看分区信息</h3>
 <pre><code>fdisk -l
 </code></pre><h3 id="创建挂载目录">创建挂载目录</h3>
 <pre><code>mkdir /mnt/sd1

@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">白歌的笔记</title>
     <subtitle type="html">个人文字记录，望后共鸣</subtitle>
-    <updated>2020-05-04T11:05:01+00:00</updated>
+    <updated>2020-05-04T11:11:37+00:00</updated>
     <id>https://example.com/</id>
     <link rel="alternate" type="text/html" href="https://example.com/" />
     <link rel="self" type="application/atom+xml" href="https://example.com/atom.xml" />
@@ -17,10 +17,10 @@
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
     <generator uri="https://gohugo.io/" version="0.69.2">Hugo</generator>
         <entry>
-            <title type="text">Linux Unmot Gua Zai Disk</title>
+            <title type="text">Linux 下自动挂载硬盘</title>
             <link rel="alternate" type="text/html" href="https://example.com/tech/linux-unmot-gua-zai-disk/" />
             <id>https://example.com/tech/linux-unmot-gua-zai-disk/</id>
-            <updated>2020-05-04T11:04:59+00:00</updated>
+            <updated>2020-05-04T11:11:35+00:00</updated>
             <published>2020-05-04T18:55:39+08:00</published>
             <author>
                     <name>白歌</name>
@@ -29,9 +29,10 @@
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
     
-    <summary type="html"><![CDATA[查看分区信息 fdisk -l 创建挂载目录 mkdir /mnt/sd1 显示UUID blkid /dev/sda1 /dev/sda1是硬盘分区 修改 /etc/fstab vi……]]></summary>
+    <summary type="html"><![CDATA[后面补充遇到的问题 查看分区信息 fdisk -l 创建挂载目录 mkdir /mnt/sd1 显示UUID blkid /dev/sda1 /dev/sda1……]]></summary>
             
-                <content type="html"><![CDATA[<h3 id="查看分区信息">查看分区信息</h3>
+                <content type="html"><![CDATA[<p>后面补充遇到的问题</p>
+<h3 id="查看分区信息">查看分区信息</h3>
 <pre><code>fdisk -l
 </code></pre><h3 id="创建挂载目录">创建挂载目录</h3>
 <pre><code>mkdir /mnt/sd1
@@ -62,7 +63,7 @@
             <title type="text">Github搭建Hugo与Actions联动</title>
             <link rel="alternate" type="text/html" href="https://example.com/tech/github-hugo-actions/" />
             <id>https://example.com/tech/github-hugo-actions/</id>
-            <updated>2020-05-04T11:04:59+00:00</updated>
+            <updated>2020-05-04T11:11:35+00:00</updated>
             <published>2020-04-25T15:37:49+08:00</published>
             <author>
                     <name>白歌</name>
@@ -156,7 +157,7 @@ jobs:
             <title type="text">Git工具-常用命令</title>
             <link rel="alternate" type="text/html" href="https://example.com/tech/git-changjian-mingning/" />
             <id>https://example.com/tech/git-changjian-mingning/</id>
-            <updated>2020-05-04T11:04:59+00:00</updated>
+            <updated>2020-05-04T11:11:35+00:00</updated>
             <published>2020-04-24T11:59:10+08:00</published>
             <author>
                     <name>白歌</name>
